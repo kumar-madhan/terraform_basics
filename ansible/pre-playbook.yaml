@@ -1,0 +1,16 @@
+---
+- name: Provisioning example droplet
+  hosts: all
+  tasks:
+    - name: Example task
+      debug:
+        msg: "Hello from Ansible!"
+
+    - name: Package Installation - Yum
+      yum:
+        name:
+          - net-tools
+          - python3
+          - java-11-openjdk
+        state: present
+
